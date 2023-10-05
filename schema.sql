@@ -1,5 +1,7 @@
 
--- The data for SQL is stored in Resource-CSVs data.csv, indicators.csv, and regions.csv, all of which can be imported into the database and tables created below=======
+-- The data for SQL is stored in Resource-CSVs indicators.csv and regions.csv  which can be imported into the database and tables created below
+--The main dataset can be found as an Excel file in the resource for the data provided in the README. This file could not be added to the repository because it is too
+--large, but should also be imported to SQL (this will take a long time)
 
 
 CREATE DATABASE "Zillow-Data"
