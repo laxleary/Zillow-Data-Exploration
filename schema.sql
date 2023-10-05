@@ -1,4 +1,6 @@
--- The data for SQL is stored in Resource-CSVs data.csv, indicators.csv, and regions.csv, all of which can be imported into the database and tables created below
+
+-- The data for SQL is stored in Resource-CSVs data.csv, indicators.csv, and regions.csv, all of which can be imported into the database and tables created below=======
+
 
 CREATE DATABASE "Zillow-Data"
     WITH
@@ -10,7 +12,11 @@ CREATE DATABASE "Zillow-Data"
 DROP TABLE IF EXISTS Regions;
 DROP TABLE IF EXISTS Indicators;
 DROP TABLE IF EXISTS Data;
+
 DROP TABLE IF EXISTS City_data;
+
+
+
 
 CREATE TABLE Regions (
     region_id varchar PRIMARY KEY,
@@ -35,6 +41,7 @@ CREATE TABLE Data (
     "value" float NOT NULL,
     CONSTRAINT data_id PRIMARY KEY (indicator_id, region_id, "date")
 );
+
 
 CREATE TABLE City_data (
     region_id varchar PRIMARY KEY,
