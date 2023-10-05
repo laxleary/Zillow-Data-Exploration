@@ -56,7 +56,8 @@ def welcome():
            f'<a href ="/api/v1.0/city_data">Description of city metadata for all known cities: /api/v1.0/city_data</a> <br/>'
            f'<a href = "/api/v1.0/data_by/<region_id>/<indicator_id>"> Description of data for the searched region and id: /api/v1.0/data_by/region_id/indicator_id </a> <br/>'
            f'<a href = "/api/v1.0/data/indicators"> All indicator metadata: /api/v1.0/data/indicators </a> <br/>'
-           f'<a href = "/api/v1.0/data/coordinates/<name>"> Coordinates of searched city: /api/v1.0/data/coordinates/city_name </a> <br/>')
+           f'<a href = "/api/v1.0/data/coordinates/<name>"> Coordinates of searched city: /api/v1.0/data/coordinates/city_name </a> <br/>'
+           f'<a href = "/api/v1.0/zillow-real-estate"> Real Estate Data for Plotly: /api/v1.0/zillow-real-estate </a> </br>')
 
 @app.route("/api/v1.0/city_data")
 @cross_origin(supports_credentials=True)
@@ -142,6 +143,52 @@ def coordinates(name):
 
     #Return as JSON
     return jsonify(my_list)
+
+# Define the route for fetching data
+@app.route('/api/v1.0/zillow-real-estate', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def get_zillow_data():
+    # Load the CSV data using pandas
+    data = pd.read_csv("../Data-Import/Resource-CSVs/Zillow-REAL ESTATE.csv")
+
+    # Convert 'date' to datetime
+    data['date'] = pd.to_datetime(data['date'])
+
+    # Extract data for years 2021, 2022, and 2023
+    data2021 = data[data['date'].dt.year == 2021]
+    data2022 = data[data['date'].dt.year == 2022]
+    data2023 = data[data['date'].dt.year == 2023]
+
+    # Define a function to extract x and y data
+    def extract_data(data):
+        x_data = data['region_id'].tolist()
+        y_data = pd.to_numeric(data['value'], errors='coerce').tolist()
+        return x_data, y_data
+
+    x_data_2021, y_data_2021 = extract_data(data2021)
+    x_data_2022, y_data_2022 = extract_data(data2022)
+    x_data_2023, y_data_2023 = extract_data(data2023)
+
+    # Create JSON response
+    response = {
+        'data': {
+            '2021': {
+                'xData': x_data_2021,
+                'yData': y_data_2021
+            },
+            '2022': {
+                'xData': x_data_2022,
+                'yData': y_data_2022
+            },
+            '2023': {
+                'xData': x_data_2023,
+                'yData': y_data_2023
+            }
+        }
+    }
+
+    return jsonify(response)
+
 
 
 if __name__ == "__main__":
