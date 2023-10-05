@@ -62,7 +62,7 @@ cities = d3.json(cityData).then(function(data){
         point = data[i]
         lat = point.coordinates[0]
         lon = point.coordinates[1]
-        if (lat > (search.lat - 0.2) && lat < (search.lat + 0.2) && lon > (search.lon - 0.2) && lon < (search.lon + 0.2)){
+        if (lat > (search.lat - 0.4) && lat < (search.lat + 0.4) && lon > (search.lon - 0.4) && lon < (search.lon + 0.4)){
         cityIDs.push(point.id)
         cityCoords.push({"lat":lat, "lon":lon});
         cityNames.push(point.name)
@@ -79,7 +79,7 @@ cities = d3.json(cityData).then(function(data){
                 housingPrices = data[1].value
                 let newMarker = L.circleMarker([cityCoords[i].lat,cityCoords[i].lon], {color : markerColor, fillOpacity:0.8, opacity: 0});
                 newMarker.addTo(markerGroup);
-                newMarker.bindPopup("<h3>"+cityNames[i]+"</h3> <p> Average Home Value (1 BR): $"+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
+                newMarker.bindPopup("<h2>"+cityNames[i]+"</h2> <p> Average Home Value (1 BR): $"+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
             } catch (TypeError){
                 console.log("No data found for this region")
             }
@@ -96,6 +96,7 @@ cities = d3.json(cityData).then(function(data){
 
 
 function searchLocation() {
+    d3.select(".error-message").text("")
     let dropdown = d3.select("#selDataset");
     let roomNumber = dropdown.property("value");
 
@@ -105,11 +106,17 @@ function searchLocation() {
     myCoordinates = []
     coordinateSearch = `http://127.0.0.1:5000/api/v1.0/data/coordinates/${searchedLocation}`
     d3.json(coordinateSearch).then(function(data){
-        myCoordinates.push(data[0].lat);
-        myCoordinates.push(data[0].lon);
+        console.log(data)
+        if (data.length > 0){
+            myCoordinates.push(data[0].lat);
+            myCoordinates.push(data[0].lon);
+        } else {
+            d3.select(".error-message").text("Sorry, we don't have any data about that city. Please try again.")
+        };
     });
-    
 
+
+    
     cities = d3.json(cityData).then(function(data){
         cityIDs = [];
         cityCoords = [];
@@ -119,13 +126,13 @@ function searchLocation() {
             point = data[i]
             lat = point.coordinates[0]
             lon = point.coordinates[1]
-            if (lat > (myCoordinates[0] - 0.2) && lat < (myCoordinates[0] + 0.2) && lon > (myCoordinates[1] - 0.2) && lon < (myCoordinates[1] + 0.2)){
+            if (lat > (myCoordinates[0] - 0.4) && lat < (myCoordinates[0] + 0.4) && lon > (myCoordinates[1] - 0.4) && lon < (myCoordinates[1] + 0.4)){
             cityIDs.push(point.id)
             cityCoords.push({"lat":lat, "lon":lon});
             cityNames.push(point.name)
             };
         };  
-        console.log(cityIDs)
+        
         for (let i=0; i < cityIDs.length; i++) {
             region_id = cityIDs[i]
             url = `http://127.0.0.1:5000/api/v1.0/data_by/${region_id}/${indicator_id}`
@@ -136,7 +143,7 @@ function searchLocation() {
                     housingPrices = data[1].value
                     let newMarker = L.circleMarker([cityCoords[i].lat,cityCoords[i].lon], {color : markerColor, fillOpacity:0.8, opacity: 0});
                     newMarker.addTo(markerGroup);
-                    newMarker.bindPopup("<h3>"+cityNames[i]+`</h3> <p> Average Home Value (${roomNumber}BR): $`+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
+                    newMarker.bindPopup("<h2>"+cityNames[i]+`</h2> <p> Average Home Value (${roomNumber}BR): $`+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
                 } catch (TypeError){
                     console.log("No data found for this region")
                 }
@@ -144,12 +151,13 @@ function searchLocation() {
 
 
         };
-
+    
     my_map.panTo([myCoordinates[0], myCoordinates[1]]);
+
+    });
+};  
     
-    });  
-    
-};
+
 
 
 
@@ -199,7 +207,7 @@ function updateLeaflet() {
             point = data[i]
             lat = point.coordinates[0]
             lon = point.coordinates[1]
-            if (lat > (myCoordinates[0] - 0.2) && lat < (myCoordinates[0] + 0.2) && lon > (myCoordinates[1] - 0.2) && lon < (myCoordinates[1] + 0.2)){
+            if (lat > (myCoordinates[0] - 0.4) && lat < (myCoordinates[0] + 0.4) && lon > (myCoordinates[1] - 0.4) && lon < (myCoordinates[1] + 0.4)){
             cityIDs.push(point.id)
             cityCoords.push({"lat":lat, "lon":lon});
             cityNames.push(point.name)
@@ -219,7 +227,7 @@ function updateLeaflet() {
                     housingPrices = data[1].value
                     let newMarker = L.circleMarker([cityCoords[i].lat,cityCoords[i].lon], {color : markerColor, fillOpacity:0.8, opacity: 0});
                     newMarker.addTo(markerGroup);
-                    newMarker.bindPopup("<h3>"+cityNames[i]+`</h3> <p> Average Home Value (${roomNumber} BR): $`+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
+                    newMarker.bindPopup("<h2>"+cityNames[i]+`</h2> <p> Average Home Value (${roomNumber} BR): $`+Math.round(data[1].value) +"<br> Last Updated: "+data[1].date+"</p>");
                 } catch (TypeError){
                     console.log("No data found for this region")
                 }

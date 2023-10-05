@@ -56,13 +56,14 @@ body {
   }
 
   .labels-container{
-    height:200px;
+    height:150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .label {
+    color:black !important;
     text-align: left;
     width: 100%;
   }
@@ -78,4 +79,18 @@ body {
   #searchButton{
     color:black;
     background-color:lightblue;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-style:normal;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .error-message{
+    color:red;
+    background-color: white;
   }

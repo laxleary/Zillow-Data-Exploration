@@ -44,6 +44,7 @@
           <div id="search">
             <h4 class = "search-title">City:<input type="text" id="cityInput" placeholder="Enter City"></h4> 
             <h4 class = "search-title">State: <input type="text" id="stateInput" placeholder="Enter State Abbreviation"></h4>
+            <p class = "error-message"></p>
             <button id = "searchButton" onclick="searchLocation()">Search</button>
           </div>
         </div>
@@ -53,7 +54,7 @@
     <div id="map"></div> 
     </div>
     </div>
-  <!-- <div id="sample-metadata" class="panel-body"></div>
+  <div id="sample-metadata" class="panel-body"></div>
   
     </div>
     <div class="col-md-5">
@@ -67,10 +68,10 @@
     <div class="col-md-12">
       <div id="bubble"></div>
     </div>
-  </div> -->
+  </div>
 
 
-
+</body>
 
 
   <!-- Leaflet JS -->
@@ -82,6 +83,6 @@
   <!-- Our JavaScript -->
   <script src="static/logic.js"></script>
 
-</body>
+
 
 </html>

@@ -31,6 +31,7 @@ Base.prepare(autoload_with = engine)
 Regions = Base.classes.regions
 Indicators = Base.classes.indicators
 Data = Base.classes.data
+Cities = Base.classes.city_data
 
 #Start a session 
 session = Session(engine)
@@ -60,7 +61,7 @@ def welcome():
 @app.route("/api/v1.0/city_data")
 @cross_origin(supports_credentials=True)
 def cities():
-    """Return city metadata"""
+    """Return location metadata"""
 
     # Perform a query to retrieve the data for the region
     data = session.query(Regions.region_id, Regions.region, Regions.region_type, Regions.lat, Regions.lon, Regions.city_name).\
@@ -127,10 +128,8 @@ def coordinates(name):
     """Return city coordinates"""
 
     # Perform a query to retrieve the data for the region
-    data = session.query(Regions.lat, Regions.lon).\
-        filter(Regions.region_type == 'city').\
-        filter(Regions.lat != None).\
-        filter(Regions.city_name == name)
+    data = session.query(Cities.lat, Cities.lon).\
+        filter(Cities.city_name == name)
 
 
     #Contruct the dictionary with the desired keys and values
