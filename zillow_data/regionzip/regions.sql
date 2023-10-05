@@ -1,0 +1,87 @@
+--MO
+SELECT *
+FROM regions
+WHERE region BETWEEN '65778' AND '65810';
+--KS
+SELECT *
+FROM regions
+WHERE region BETWEEN '66002' AND '67954';
+--NE
+SELECT *
+FROM regions
+WHERE region BETWEEN '68001' AND '69367';
+--LA
+SELECT *
+FROM regions
+WHERE region BETWEEN '70001' AND '71486';
+--AR
+SELECT *
+FROM regions
+WHERE region BETWEEN '71601' AND '72956';
+--OK
+SELECT *
+FROM regions
+WHERE region BETWEEN '73002' AND '74966';
+--TX
+SELECT *
+FROM regions
+WHERE region BETWEEN '75001' AND '79938';
+--CO
+SELECT *
+FROM regions
+WHERE region BETWEEN '80002' AND '81656';
+--WY
+SELECT *
+FROM regions
+WHERE region BETWEEN '82001' AND '83128';
+--ID
+SELECT *
+FROM regions
+WHERE region BETWEEN '83201' AND '83876';
+--UT
+SELECT *
+FROM regions
+WHERE region BETWEEN '84001' AND '84772';
+--AZ
+SELECT *
+FROM regions
+WHERE region BETWEEN '85003' AND '86512';
+--NM
+SELECT *
+FROM regions
+WHERE region BETWEEN '87001' AND '88435';
+--NV
+SELECT *
+FROM regions
+WHERE region BETWEEN '89001' AND '89883';
+--CA
+SELECT *
+FROM regions
+WHERE region BETWEEN '90001' AND '96162';
+--HI
+SELECT *
+FROM regions
+WHERE region BETWEEN '96701' AND '96826';
+--OR
+SELECT *
+FROM regions
+WHERE region BETWEEN '97002' AND '97920';
+--WA
+SELECT *
+FROM regions
+WHERE region BETWEEN '99489' AND '99999';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
