@@ -152,7 +152,7 @@ function searchLocation() {
 
         };
     
-    my_map.panTo([myCoordinates[0], myCoordinates[1]]);
+    my_map.setView([myCoordinates[0], myCoordinates[1]], 10);
 
     });
 };  
