@@ -44,9 +44,9 @@ Plotly.d3.csv("../Data-Import/Resource-CSVs/ZILLOW-REAL ESTATE.csv", function(da
     };
 
     const layout = {
-        title: 'Zillow Real Estate Scatter Plot Comparison',
+        title: 'Progression of Single Bedroom Home Prices',
         xaxis: {title: 'Region ID', type: 'category', categoryorder: 'category ascending'},
-        yaxis: {title: 'Property Value for ZSFH', tickformat: '$,.2f'},
+        yaxis: {title: 'Property Value for 1BR Homes', tickformat: '$,.2f'},
         margin: { l: 100, r: 50, b: 50, t: 50, pad: 4 } // Adjust left and right margins
     };
 
