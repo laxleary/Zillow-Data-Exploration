@@ -14,5 +14,6 @@ Note: The data.csv file is extremely large and may take multiple hours to import
 4. [Run Flask](Flask-API/app.py)
    
 The webpage should now have full functionality!
+
 ## Data Source
 https://data.nasdaq.com/databases/ZILLOW/usage/export
