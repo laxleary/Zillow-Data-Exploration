@@ -46,8 +46,7 @@ CREATE TABLE Data (
 
 
 CREATE TABLE City_data (
-    region_id varchar PRIMARY KEY,
-    region varchar NOT NULL
+    region_id varchar PRIMARY KEY    
 );
 
 ALTER TABLE Regions
