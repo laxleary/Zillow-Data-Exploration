@@ -8,7 +8,9 @@ experts ready to lend their expertise. Within this project, we'll delve into hou
 
 (including sales/rentals), and region type and includes many indicators. Our objective is for the user to have an interactive dashboard to explore the data presented by Zillow on regions across the United States. 
 
-This tool aims to assist users in discerning housing potentials and trends.
+You have the option to  enter the city, state, and house size by the number of bedrooms and each marker will display the value in that region. 
+
+This tool aims to assist users in discerning housing potentials and trends. 
 
 
 ## Prerequisistes 
@@ -89,7 +91,7 @@ To achieve Map:
 
 2. This will start the Flask server
 
-3. ![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/844a9e7d-47d4-4723-87e0-1cbc3ceddb2f)
+3. [Run Flask](Flask-API/app.py)
 
 
 ## Access the Webpage
