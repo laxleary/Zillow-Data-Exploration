@@ -8,9 +8,8 @@ experts ready to lend their expertise. Within this project, we'll delve into hou
 
 (including sales/rentals), and region type and includes many indicators. Our objective is for the user to have an interactive dashboard to explore the data presented by Zillow on regions across the United States. 
 
-You have the option to  enter the city, state, and house size by the number of bedrooms and each marker will display the value in that region. 
-
 This tool aims to assist users in discerning housing potentials and trends. 
+
 
 
 ## Prerequisistes 
@@ -97,11 +96,15 @@ To achieve Map:
 ## Access the Webpage
 1. Open browser
 
-2. The Home Search data Web page should be rendered with the HTML, CSS and Javascript information that was entered. It should display the below 
-
+2. The Home Search data Web page should be rendered with the HTML, CSS and Javascript information:
 
    
 ![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/0e3ff080-5555-4030-90d4-639a7896698f)
+
+*You have the option to enter the city, state, and house size by the number of bedrooms and each marker will
+
+display the value in that particular region.
+
 
 
 
