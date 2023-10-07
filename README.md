@@ -89,6 +89,9 @@ To achieve Map:
 
 2. This will start the Flask server
 
+3. ![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/844a9e7d-47d4-4723-87e0-1cbc3ceddb2f)
+
+
 ## Access the Webpage
 1. Open browser
 
