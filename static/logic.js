@@ -358,7 +358,7 @@ function updatePlotly() {
     }
 
     searchURL = url = `http://127.0.0.1:5000/api/v1.0/data_by/${region_id}/${indicator_id}`
-    console.log(searchURL);
+    
             //Create a line plot for the selected city
             d3.json(searchURL).then(function (data){
                 city_Z1BR[data.region_id]={};
