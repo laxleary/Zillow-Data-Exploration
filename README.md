@@ -38,7 +38,7 @@ In order to view the full functionality of the webpage, you will need to first f
 Note: The data.csv file is extremely large and may take multiple hours to import into Postgres.
 
 3. In the folder Flask-API, create a config file storing your PostgreSQL password as the variable **postgres**.
-4. [Run Flask](Flask-API/app.py)
+4. [Run Flask](Flask-API/app.py) (more details for this step can be found below if needed)
    
 The webpage should now have full functionality!
 
@@ -65,7 +65,7 @@ Once CSVs are cleaned and made to display the information you would like to be p
 
 5. Then return JSON
 
-### Javascritpt files. 
+### Javascript files. 
 
 To achieve Scatterplot: 
 
