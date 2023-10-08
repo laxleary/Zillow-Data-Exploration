@@ -35,20 +35,24 @@
       <div class="col-md-2">
       </div>
     </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">View Housing Near the City of Your Choice</h3>
+        <div id="search">
+          <h4 class = "search-title">City: <input type="text" id="cityInput" placeholder="Enter City"></h4> 
+          <h4 class = "search-title">State: <input type="text" id="stateInput" placeholder="Enter State Abbreviation"></h4>
+          <p class = "error-message"></p>
+          <button id = "searchButton" onclick="searchLocation()">Search</button>
+          <p class = "instructions" style = "margin-top: 16px;">Feel free to change the search based on the number of nedrooms in the home!</p>
+          <h5 class = "dropdown">House Size (by bedroom #) : <select id="selDataset"></select> </h5>
+        </div>
+      </div> 
+      <div id="map"></div>
+    </div>
     <div class = "row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">View Housing Near the City of Your Choice</h3>
-          <div id="search">
-            <h4 class = "search-title">City: <input type="text" id="cityInput" placeholder="Enter City"></h4> 
-            <h4 class = "search-title">State: <input type="text" id="stateInput" placeholder="Enter State Abbreviation"></h4>
-            <p class = "error-message"></p>
-            <button id = "searchButton" onclick="searchLocation()">Search</button>
-            <p class = "instructions" style = "margin-top: 16px;">Feel free to change the search based on the number of nedrooms in the home!</p>
-            <h5 class = "dropdown">House Size (by bedroom #) : <select id="selDataset"></select> </h5>
-          </div>
-        </div> 
-        <div id="map"></div>
+      <div class="col-md-12">
+        <h5 class = "dropdown">City : <select id="selDataset2"></select> </h5>
+        <div id="line"></div>
       </div>
     </div>
     <div class = "row">
@@ -71,19 +75,8 @@
     
 
  
-    <div class="col-md-5">
 
-    </div>
-    <div class="col-md-5">
-      <div id="gauge"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="bubble"></div>
-    </div>
-  </div>
-
+    
 
 </body>
 
@@ -94,7 +87,7 @@
     crossorigin=""></script>
   <!-- D3 JavaScript -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <!-- Map JavaScript -->
+  <!-- Map/Line Chart JavaScript -->
   <script src="static/logic.js"></script>
   <!-- Scatterplot JavaScript-->
   <script src="static/scatterplot.js"></script>
