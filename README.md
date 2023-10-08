@@ -24,7 +24,7 @@ Make sure you have the following installed:
 
 - Javascript (for frontend interactivity)
 
-- HTML (for structring the webpage)
+* VSCode extensions for HTML and CSS may also be beneficial
 
 ## Usage Instructions
 Our webpage can be found at [https://laxleary.github.io/Zillow-Data-Exploration/](https://laxleary.github.io/Zillow-Data-Exploration/).
