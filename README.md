@@ -120,6 +120,6 @@ display the value in that particular region.
 ## Data Source
 https://data.nasdaq.com/databases/ZILLOW/usage/export
 
-##Outside Sources
+## Outside Sources
 The following code was developed by the three co-authors using methods learned in class. New methods were developed with the assistance of StackOverflow, GeeksforGeeks, and official documentation for Leaflet, Plotly,
 D3, Python, Bootstrap, and JavaScript. Code was not copied directly from these sources, rather the authors used their explanations to develop novel code. 
