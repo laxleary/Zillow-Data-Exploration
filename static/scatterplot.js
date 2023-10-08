@@ -1,5 +1,5 @@
 // Step 1: Load CSV Data
-Plotly.d3.csv("../Data-Import/Resource-CSVs/ZILLOW-REAL ESTATE.csv", function(data) {
+Plotly.d3.csv("Data-Import/Resource-CSVs/ZILLOW-REAL ESTATE.csv", function(data) {
     // Step 2: Extract data for years 2021, 2022, and 2023
     const data2021 = data.filter(d => (new Date(d.date)).getFullYear() === 2021);
     const data2022 = data.filter(d => (new Date(d.date)).getFullYear() === 2022);
