@@ -28,7 +28,7 @@ Make sure you have the following installed:
 
 - HTML (for structring the webpage)
 
-  ## Usage Instructions
+## Usage Instructions
 Our webpage can be found at [https://laxleary.github.io/Zillow-Data-Exploration/](https://laxleary.github.io/Zillow-Data-Exploration/).
 
 In order to view the full functionality of the webpage, you will need to first follow these steps:
