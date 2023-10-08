@@ -24,8 +24,6 @@ Make sure you have the following installed:
 
 - Javascript (for frontend interactivity)
 
-- D3.js (for Data Visualization)
-
 - HTML (for structring the webpage)
 
 ## Usage Instructions
