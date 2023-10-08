@@ -86,13 +86,18 @@ cities = d3.json(cityData).then(function(data){
             var formattedDate = `${month}-${year}`;
             city_Z1BR[data.region_id]["date"].push(formattedDate);
         };
+        markerColor = getColor(city_Z1BR[data.region_id]["value"][city_Z1BR[data.region_id]["value"].length-1])
         trace1 = {
             x: city_Z1BR[data.region_id]["date"],
-            y: city_Z1BR[data.region_id]["value"]
+            y: city_Z1BR[data.region_id]["value"],
+            mode: 'lines',
+            line: {
+                color: markerColor
+            }
         };
         let chartData = [trace1];
         let layout = {
-            title: `Average Home Values of All Types for New York, NY`,
+            title: `Average Values of 1 Bedroom Homes for New York, NY`,
             xaxis: {
                title: "Date"
               },
@@ -102,10 +107,13 @@ cities = d3.json(cityData).then(function(data){
             margin: {
                 b: 100
             }
-    
         };
         Plotly.newPlot("line", chartData, layout)
     });
+
+    //Put New York, NY at the top of the search so that if we change room number, we don't lose our searched city
+    option = d3.select("#selDataset2").append("option");
+    option.text("New York, NY")
 
     //Sort our city dictionaries based on name
     cityDicts = cityDicts.sort(function(a,b){
@@ -120,8 +128,10 @@ cities = d3.json(cityData).then(function(data){
 
     //For each city within our desired coordinate limits, grab the most current data
     for (let i=0; i < cityDicts.length; i++) {
-        let option =d3.select("#selDataset2").append("option");
-        option.text(cityDicts[i].name)
+        if (cityDicts[i].name != "New York, NY"){
+            let option =d3.select("#selDataset2").append("option");
+            option.text(cityDicts[i].name);
+        };
         region_id = cityDicts[i].id
         url = `http://127.0.0.1:5000/api/v1.0/data_by/${region_id}/Z1BR`
         sales_data = d3.json(url).then(function (data){
@@ -189,6 +199,9 @@ function searchLocation() {
        
         //Set up for the new Plotly
         newURL = `http://127.0.0.1:5000/api/v1.0/data_by/${region_id}/${indicator_id}`
+        //Put searchedLocation at the top of the search so that if we change room number, we don't lose our searched city
+        option = d3.select("#selDataset2").append("option");
+        option.text(searchedLocation);
         
         //Create a line plot for the default city (searchedLocation)
         d3.json(newURL).then(function (data){
@@ -203,13 +216,18 @@ function searchLocation() {
                 var formattedDate = `${month}-${year}`;
                 city_Z1BR[data.region_id]["date"].push(formattedDate);
             };
+            markerColor = getColor(city_Z1BR[data.region_id]["value"][city_Z1BR[data.region_id]["value"].length-1])
             trace1 = {
                 x: city_Z1BR[data.region_id]["date"],
-                y: city_Z1BR[data.region_id]["value"]
+                y: city_Z1BR[data.region_id]["value"], 
+                mode: "lines", 
+                line: {
+                    color: markerColor
+                }
             };
             let chartData = [trace1];
             let layout = {
-                title: `Average Home Values of All Types for ${plotlyName}`,
+                title: `Average Values of ${roomNumber} Homes for ${plotlyName}`,
                 xaxis: {
                 title: "Date"
                 },
@@ -239,8 +257,10 @@ function searchLocation() {
         //For the cities we kept, find the home value data
         for (let i=0; i < cityDicts.length; i++) {
             region_id = cityDicts[i].id
-            let option =d3.select("#selDataset2").append("option");
-            option.text(cityDicts[i].name)
+            if (cityDicts[i].name != searchedLocation){
+                let option =d3.select("#selDataset2").append("option");
+                option.text(cityDicts[i].name)
+            };
             url = `http://127.0.0.1:5000/api/v1.0/data_by/${region_id}/${indicator_id}`
             sales_data = d3.json(url).then(function (data){
                 data.reverse()
@@ -284,7 +304,7 @@ d3.selectAll("#selDataset2").on("change", updatePlotly);
 //Define what should happen when a selection on the drop-down is made
 function updateLeaflet() {
     let dropdown = d3.select("#selDataset");
-    let roomNumber = dropdown.property("value");
+    roomNumber = dropdown.property("value");
 
 
 
@@ -342,7 +362,9 @@ function updateLeaflet() {
         
         };
     });  
-    
+
+    //Also update Plotly since the bedroom number has changed
+    updatePlotly();
 };
 
 //Create a function to update Plotly when the dropdown option is selected
@@ -372,13 +394,18 @@ function updatePlotly() {
                     var formattedDate = `${month}-${year}`;
                     city_Z1BR[data.region_id]["date"].push(formattedDate);
                 };
+                markerColor = getColor(city_Z1BR[data.region_id]["value"][city_Z1BR[data.region_id]["value"].length-1])
                 trace1 = {
                     x: city_Z1BR[data.region_id]["date"],
-                    y: city_Z1BR[data.region_id]["value"]
+                    y: city_Z1BR[data.region_id]["value"], 
+                    mode: "lines", 
+                    line: {
+                        color: markerColor
+                    }
                 };
                 let chartData = [trace1];
                 let layout = {
-                    title: `Average Home Values of All Types for ${plotlyName}`,
+                    title: `Average Values of ${roomNumber} Bedroom Homes for ${plotlyName}`,
                     xaxis: {
                     title: "Date"
                     },
