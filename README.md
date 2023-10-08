@@ -20,7 +20,7 @@ Make sure you have the following installed:
 
 - SQL (MySQL, PostrgreSQL, or any other database of your choice)
 
-- SQLAlchemy (Install with pip install SQL Alchamey)
+- SQLAlchemy (Install with pip install SQL Alchemey)
 
 - Javascript (for frontend interactivity)
 
