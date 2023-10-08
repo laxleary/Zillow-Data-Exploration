@@ -79,12 +79,12 @@ To achieve Map:
 
 2. Create the map with layers, markers, and drop-down menu (coding can be found in static folder logic.js)
 
-3. Use specific longitude and latitude for ploting the regions
+3. Use specific longitude and latitude for plotting the regions
 
 ![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/32d4e0a6-ce17-43c1-86c3-18c0690c7065)
 
 ### CSS
-1. Use CSS to style the webpage (Coding can be found in the static folder style.css to show how our webpage was styled)
+1. Use CSS to style the webpage (Coding can be found in the static folder [style.css](style.css) to show how our webpage was styled)
 
 ### HTML 
 
@@ -92,7 +92,7 @@ To achieve Map:
 
 2. In index.html link the CSS and Javascript files
 
-3. For the purpose of this project we used the style.css, Leaflet.Js, D3 JS, Map JS, and Scatterplot JS
+3. For the purpose of this project we used style.css, Plotly, Leaflet.Js, chroma.js, D3.js JS, and Scatterplot JS
 
 
 ## Run Flask Application
