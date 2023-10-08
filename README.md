@@ -3,11 +3,8 @@ Project 3
 
 ## Background
 Zillow stands as the forefront real estate and rental platform, committed to arming consumers with vital data, inspiration, and insights about their home, while facilitating connections with top-notch local 
-
 experts ready to lend their expertise. Within this project, we'll delve into housing data sourced from Zillow via NASDAQ. This dataset encompasses information on Real Estate Data categorized by region, housing type 
-
 (including sales/rentals), and region type and includes many indicators. Our objective is for the user to have an interactive dashboard to explore the data presented by Zillow on regions across the United States. 
-
 This tool aims to assist users in discerning housing potentials and trends. 
 
 
