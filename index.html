@@ -72,7 +72,17 @@
         <div id="scatter-plot">
       </div>
     </div>
-   
+    <div class = "row">
+      <div class = "col-md-12">
+        <h2 style = "display:flex; justify-content: center;"> Not sure what state you'd like to live in? Use the below plot to view historical trends in the average price of a house by state. Select a state in the legend to rule it out!</h2>
+        <div class="chartCard">
+          <div class="chartBox">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
 
  
@@ -92,6 +102,13 @@
   <script src="static/logic.js"></script>
   <!-- Scatterplot JavaScript-->
   <script src="static/scatterplot.js"></script>
+  <!-- Line_Chart JavaScript-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
+  <script src = "static/line_chart.js"></script>
+
+
 
 
 </html>

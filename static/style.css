@@ -87,7 +87,7 @@
   }
 
   h2 {
-    font-size: 14px;
+    font-size: 18px;
     font-style:normal;
   }
 
@@ -110,4 +110,28 @@
     outline: none;
   }
 
- 
+  .chartMenu {
+    width: 100vw;
+    height: 40px;
+    background: #1A1A1A;
+    color: rgba(54, 162, 235, 1);
+  }
+  .chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+  }
+  .chartCard {
+    width:100%; 
+    height: 100% ;
+    background: tan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chartBox {
+    width: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 3px #337ab7;;
+    background: white;
+  }
