@@ -83,6 +83,11 @@ To achieve Map:
 
 ![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/32d4e0a6-ce17-43c1-86c3-18c0690c7065)
 
+*You have the option to enter the city, state, and house size by the number of bedrooms and each marker will
+
+display the value in that particular region.
+
+
 ### CSS
 1. Use CSS to style the webpage (Coding can be found in the static folder [style.css](style.css) to show how our webpage was styled)
 
@@ -112,13 +117,11 @@ To achieve Map:
    
 ![image](demo_images/line_chart.png)
 
-*You have the option to enter the city, state, and house size by the number of bedrooms and each marker will
-
-display the value in that particular region.
 
 
-## Data Source
+## Data Sources
 https://data.nasdaq.com/databases/ZILLOW/usage/export
+[Geoapify Places API](https://apidocs.geoapify.com/playground/places/)
 
 ## Outside Sources
 The following code was developed by the three co-authors using methods learned in class. New methods were developed with the assistance of StackOverflow, GeeksforGeeks, and official documentation for Leaflet, Plotly,
