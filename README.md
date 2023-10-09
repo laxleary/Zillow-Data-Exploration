@@ -117,8 +117,9 @@ To achieve Map:
 display the value in that particular region.
 
 
-## Data Source
+## Data Sources
 https://data.nasdaq.com/databases/ZILLOW/usage/export
+[Geoapify Places API](https://apidocs.geoapify.com/playground/places/)
 
 ## Outside Sources
 The following code was developed by the three co-authors using methods learned in class. New methods were developed with the assistance of StackOverflow, GeeksforGeeks, and official documentation for Leaflet, Plotly,
