@@ -110,7 +110,7 @@ To achieve Map:
 2. The Home Search data Web page should be rendered with the HTML, CSS and Javascript information:
 
    
-![image](https://github.com/laxleary/Zillow-Data-Exploration/assets/130908954/0e3ff080-5555-4030-90d4-639a7896698f)
+![image](demo_images/line_chart.png)
 
 *You have the option to enter the city, state, and house size by the number of bedrooms and each marker will
 
