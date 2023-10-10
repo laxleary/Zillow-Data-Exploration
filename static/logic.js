@@ -59,7 +59,7 @@ let search = {"lat":40.73, "lon":-74.0059};
 let cityDicts = [];
 var backupCoords = [];
 
-defaultURL = "http://127.0.0.1:5000/api/v1.0/data_by/9999/Z1BR"
+defaultURL = "http://127.0.0.1:5000/api/v1.0/data_by/6181/Z1BR"
 let city_Z1BR = [];
 
 // Make our API call to retrieve all of the cities near New York, NY for the default map
