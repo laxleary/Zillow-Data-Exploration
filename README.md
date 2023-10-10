@@ -40,6 +40,8 @@ In order to view the full functionality of the webpage, you will need to first f
    
 The webpage should now have full functionality!
 
+A slide show presenting the work done on teh repository and its intended use can be found [here](https://docs.google.com/presentation/d/1Zi1szDj21tAhBGQp1SkIZv0P69IcVQ6u0K2kJKclElw/edit#slide=id.g28a22248245_12_8).
+
 
 ## Creation Process
 Download the CSVs provided in ZILLOW | Zillow Real Estate Data | Nasdaq Data Link to SQL, use SQL as your database to house the data. Create a database in SQL in the database create a schema to run all queries to 
