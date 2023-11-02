@@ -18,7 +18,7 @@ Make sure you have the following installed:
 
 - Flask (Install with pip install)
 
-- SQL (MySQL, PostrgreSQL, or any other database of your choice)
+- SQL (MySQL, PostgreSQL, or any other database of your choice)
 
 - SQLAlchemy (Install with pip install SQL Alchemey)
 
